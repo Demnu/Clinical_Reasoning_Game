@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Bob from "../../assets/bob.jpg";
 import Liz from "../../assets/liz.jpg";
+import Loading from "../../assets/loading.jpg";
 import SpeechBubble from "../../assets/speech_bubble.jpg";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
@@ -35,7 +36,7 @@ const Person = () => {
     id: 0,
     name: "",
     age: 0,
-    imageUrl: "",
+    imageUrl: Loading,
   });
   const [complaint, setComplaint] = useState<string>("");
   const [showComplaint, setShowComplaint] = useState<boolean>(false);
@@ -53,7 +54,7 @@ const Person = () => {
   }, []);
 
   return (
-    <div className=" flex justify-center pt-4 flex">
+    <div className=" flex justify-center pt-4 ">
       {person && (
         <img src={person.imageUrl} alt="Logo" style={{ maxWidth: "22rem" }} />
       )}
