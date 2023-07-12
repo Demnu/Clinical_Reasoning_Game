@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import About from "../components/character/About";
 import Person from "../components/character/Person";
 const Game = () => {
   return (

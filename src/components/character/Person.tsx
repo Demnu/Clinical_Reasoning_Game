@@ -3,8 +3,6 @@ import Bob from "../../assets/bob.jpg";
 import Liz from "../../assets/liz.jpg";
 import SpeechBubble from "../../assets/speech_bubble.jpg";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import { Box, Typography } from "@mui/material";
 
 import { Button } from "@mui/material";
 type personType = {
