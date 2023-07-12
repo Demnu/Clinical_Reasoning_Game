@@ -5,7 +5,7 @@ const Game = () => {
     <div className=" flex justify-center items-center flex-col pt-4">
       <h1 className=" text-4xl mb-6">Clinical Reasoning: The (Online) Game</h1>
 
-      <div className="block p-6 w-full max-w-2xl bg-white border border-gray-200 rounded-lg shadow  mb-3">
+      <div className="block p-6 w-full max-w-3xl bg-white border border-gray-200 rounded-lg shadow  mb-3 ">
         <Person />
       </div>
 
