@@ -32,7 +32,12 @@ const complaints = [
 ];
 const persons = [bob, liz];
 const Person = () => {
-  const [person, setPerson] = useState<personType | null>(null);
+  const [person, setPerson] = useState<personType>({
+    id: 0,
+    name: "",
+    age: 0,
+    imageUrl: Loading,
+  });
   const [complaint, setComplaint] = useState<string>("");
   const [showComplaint, setShowComplaint] = useState<boolean>(false);
 
@@ -49,53 +54,51 @@ const Person = () => {
   }, []);
 
   return (
-    <div className=" flex justify-center pt-4 ">
-      {!!person && (
-        <>
-          <img src={person.imageUrl} alt="Logo" style={{ maxWidth: "22rem" }} />
-          <div className=" mt-20 flex flex-col items-center">
-            {!showComplaint && (
-              <>
-                <h1 className=" text-6xl mb-3">{person.name.toUpperCase()}</h1>
-                <h1 className=" text-4xl mb-4">{person.age} YEARS OLD</h1>
-                <Button onClick={clickHandler} color="primary">
-                  <ArrowForwardIcon color="primary" style={{ fontSize: 150 }} />
-                </Button>
-              </>
-            )}
-            {showComplaint && (
-              <div
-                style={{
-                  position: "relative",
-                  display: "inline-block",
-                  width: "20rem",
-                  height: "20rem",
-                }}
-              >
-                <img
-                  src={SpeechBubble}
-                  alt="Logo"
-                  style={{ width: "100%", height: "100%" }}
-                />
-                <p
-                  style={{
-                    fontSize: "1.5rem",
-                    position: "absolute",
-                    top: "40%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    color: "#000",
-                    padding: "0.5rem",
-                    textAlign: "center",
-                  }}
-                >
-                  {complaint}
-                </p>
-              </div>
-            )}
-          </div>
-        </>
+    <div className=" flex justify-center pt-4 flex">
+      {person && (
+        <img src={person.imageUrl} alt="Logo" style={{ maxWidth: "22rem" }} />
       )}
+      <div className=" mt-20 flex flex-col items-center">
+        {!showComplaint && (
+          <>
+            <h1 className=" text-6xl mb-3">{person.name.toUpperCase()}</h1>
+            <h1 className=" text-4xl mb-4">{person.age} YEARS OLD</h1>
+            <Button onClick={clickHandler} color="primary">
+              <ArrowForwardIcon color="primary" style={{ fontSize: 150 }} />
+            </Button>
+          </>
+        )}
+        {showComplaint && (
+          <div
+            style={{
+              position: "relative",
+              display: "inline-block",
+              width: "20rem",
+              height: "20rem",
+            }}
+          >
+            <img
+              src={SpeechBubble}
+              alt="Logo"
+              style={{ width: "100%", height: "100%" }}
+            />
+            <p
+              style={{
+                fontSize: "1.5rem",
+                position: "absolute",
+                top: "40%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                color: "#000",
+                padding: "0.5rem",
+                textAlign: "center",
+              }}
+            >
+              {complaint}
+            </p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
